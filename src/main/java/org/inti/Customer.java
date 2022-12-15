@@ -15,8 +15,8 @@ public class Customer extends RouteBuilder implements InitializingBean, CamelCon
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
 		if (camelContext == null) {
-			this.addRoutesToCamelContext(camelContext);
-
+			//this.addRoutesToCamelContext(camelContext);
+			camelContext.addRoutes(this);
 		}
 
 	}
@@ -32,6 +32,9 @@ public class Customer extends RouteBuilder implements InitializingBean, CamelCon
 			public void process(Exchange exchange) throws Exception {
 				// TODO Auto-generated method stub
 				Order order = exchange.getIn().getBody(Order.class);
+				order.additem
+				exchange.getIn().setBody(order);
+				
 			}
 		});
 
