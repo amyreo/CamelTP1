@@ -1,5 +1,8 @@
 package org.inti;
 
+import org.inti.model.DrinkType;
+import org.springframework.core.annotation.Order;
+
 public class OrderItem {
 	
 	private DrinkType drinkType;

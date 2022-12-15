@@ -2,6 +2,8 @@ package org.inti;
 
 import java.util.List;
 
+import org.inti.model.Drink;
+
 public class Delivery {
 	
 	private List<Drink> listeDrink;
