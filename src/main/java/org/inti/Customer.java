@@ -19,7 +19,7 @@ public class Customer extends RouteBuilder implements InitializingBean, CamelCon
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
 		if (camelContext == null) {
-			//this.addRoutesToCamelContext(camelContext);
+			// this.addRoutesToCamelContext(camelContext);
 			camelContext.addRoutes(this);
 		}
 
@@ -28,21 +28,25 @@ public class Customer extends RouteBuilder implements InitializingBean, CamelCon
 	@Override
 	public void configure() throws Exception {
 		// TODO Auto-generated method stub
-		from("timer:myTimer?fixedRate=true&period=60000")
-		.to("direct:cafe")
-		.process(new Processor() {
-			
-			@Override
-			public void process(Exchange exchange) throws Exception {
-				// TODO Auto-generated method stub
-				Order order = new Order();
-				List<OrderItem> lo = new ArrayList<>();
-				order.setListOrderItems(lo);
-				order.additem(DrinkType.ESPRESSO, 5 , true);
-				exchange.getIn().setBody(order);
-				
-			}
-		});
+		from("timer:myTimer?fixedRate=true&period=10000")
+
+				.process(new Processor() {
+
+					@Override
+					public void process(Exchange exchange) throws Exception {
+						// TODO Auto-generated method stub
+						Order order = new Order();
+						List<OrderItem> lo = new ArrayList<>();
+						order.setListOrderItems(lo);
+						order.additem(DrinkType.ESPRESSO, 5, true);
+						exchange.getIn().setBody(order);
+						List<OrderItem> liste = order.getListOrderItems();
+//				for (OrderItem orderItem : liste) {
+//					System.out.println(orderItem.getDrinkType().toString());
+//				}
+
+					}
+				}).to("direct:cafe");
 
 	}
 

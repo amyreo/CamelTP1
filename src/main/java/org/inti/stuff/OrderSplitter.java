@@ -11,10 +11,10 @@ public class OrderSplitter {
 	
 	public List<OrderItem> split(Order order)
 	{	
-		List<OrderItem> lisOrderItems = new ArrayList<>();
-		for (OrderItem orderItem : lisOrderItems) {
-			return lisOrderItems;
-		}
-		return null;	
+		System.out.println("ordersplitter");
+
+		List<OrderItem> lisOrderItems = order.getListOrderItems();
+
+		return lisOrderItems;	
 	}
 }

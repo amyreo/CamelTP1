@@ -11,6 +11,7 @@ public class Waiter {
 	
 	public Delivery  prepareDelivery(List<Drink> listDrink) {
 		count ++;
+		System.out.println("on est dans preparedelivery");
 		Delivery delivery = new Delivery(listDrink, count);
 		return delivery;
 	}

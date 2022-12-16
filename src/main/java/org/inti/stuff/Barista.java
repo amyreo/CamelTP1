@@ -15,6 +15,7 @@ public class Barista {
 	
 	public Drink prepareHotDrink(OrderItem orderItem) throws InterruptedException 
 	{
+		System.out.println("hotdrink");
 		Thread.sleep(hotDrinkDelay);
 		return drink;
 		
@@ -22,6 +23,8 @@ public class Barista {
 
 	public Drink prepareColdDrink(OrderItem orderItem) throws InterruptedException 
 	{
+		System.out.println("colddrink");
+
 		Thread.sleep(coldDrinkDelay);
 		return drink;
 		

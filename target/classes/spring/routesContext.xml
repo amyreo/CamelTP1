@@ -30,7 +30,8 @@
         </route>
         <route id="_route5">
             <from id="_from5" uri="direct:deliveries"/>
-            <aggregate completionTimeout="5000" id="_aggregate1" strategyRef="cafeAggregationStrategy">
+            <aggregate completionTimeout="5000" id="_aggregate1"
+                ignoreInvalidCorrelationKeys="true" strategyRef="cafeAggregationStrategy">
                 <correlationExpression>
                     <method method="checkOrder" ref="waiter"/>
                 </correlationExpression>
