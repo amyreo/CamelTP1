@@ -34,13 +34,16 @@ public class Customer extends RouteBuilder implements InitializingBean, CamelCon
 
 					@Override
 					public void process(Exchange exchange) throws Exception {
-						// TODO Auto-generated method stub
+
 						Order order = new Order();
 						List<OrderItem> lo = new ArrayList<>();
-						order.setListOrderItems(lo);
+						order.setNumber(1);
+//						order.setListOrderItems(lo);
 						order.additem(DrinkType.ESPRESSO, 5, true);
+						order.additem(DrinkType.MOCHA, 8, false);
 						exchange.getIn().setBody(order);
-						List<OrderItem> liste = order.getListOrderItems();
+						
+//						List<OrderItem> liste = order.getListOrderItems();
 //				for (OrderItem orderItem : liste) {
 //					System.out.println(orderItem.getDrinkType().toString());
 //				}

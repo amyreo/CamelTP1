@@ -40,6 +40,12 @@ public class Delivery {
 	public void setOrderNumber(int orderNumber) {
 		this.orderNumber = orderNumber;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Delivery [listeDrink=" + listeDrink.toString() + ", orderNumber=" + orderNumber + "]";
+	}
 	
 	
 

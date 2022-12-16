@@ -1,7 +1,7 @@
 package org.inti;
 
 import org.inti.model.DrinkType;
-import org.springframework.core.annotation.Order;
+import org.inti.model.Order;
 import org.springframework.stereotype.Component;
 
 public class OrderItem {

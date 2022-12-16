@@ -11,7 +11,7 @@ public class OrderSplitter {
 	
 	public List<OrderItem> split(Order order)
 	{	
-		System.out.println("ordersplitter");
+//		System.out.println("ordersplitter");
 
 		List<OrderItem> lisOrderItems = order.getListOrderItems();
 

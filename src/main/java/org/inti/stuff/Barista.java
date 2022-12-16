@@ -7,7 +7,7 @@ import org.inti.OrderItem;
 import org.inti.model.Drink;
 
 public class Barista {
-	private static Drink drink;
+//	private static Drink drink;
 	private long hotDrinkDelay = 300;
 	private long coldDrinkDelay = 100;
 	private AtomicInteger hotDrinkCounter = new AtomicInteger();
@@ -15,18 +15,19 @@ public class Barista {
 	
 	public Drink prepareHotDrink(OrderItem orderItem) throws InterruptedException 
 	{
-		System.out.println("hotdrink");
+//		System.out.println("hotdrink");
 		Thread.sleep(hotDrinkDelay);
-		return drink;
+//		return orderItem.getDrinkType();
+		return new Drink(orderItem.isIced(), orderItem.getShots(), orderItem.getDrinkType(), orderItem.getOrder().getNumber());
 		
 	}
 
 	public Drink prepareColdDrink(OrderItem orderItem) throws InterruptedException 
 	{
-		System.out.println("colddrink");
+//		System.out.println("colddrink");
 
 		Thread.sleep(coldDrinkDelay);
-		return drink;
+		return new Drink(orderItem.isIced(), orderItem.getShots(), orderItem.getDrinkType(), orderItem.getOrder().getNumber());
 		
 	}
 

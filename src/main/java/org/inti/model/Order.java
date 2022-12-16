@@ -1,5 +1,6 @@
 package org.inti.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.inti.OrderItem;
@@ -7,7 +8,7 @@ import org.inti.OrderItem;
 public class Order {
 
 	private int number;
-	private List<OrderItem> listOrderItems;
+	private List<OrderItem> listOrderItems = new ArrayList<>();
 
 	public Order() {
 		super();
@@ -32,7 +33,6 @@ public class Order {
 	}
 
 	public void setListOrderItems(List<OrderItem> listOrderItems) {
-//		System.out.println("on est bien dans setlistorderitems");
 		this.listOrderItems = listOrderItems;
 	}
 
@@ -53,6 +53,7 @@ public class Order {
 		oi.setDrinkType(drinkType);
 		oi.setIced(iced);
 		oi.setShots(shots);
+		oi.setOrder(this);
 		listOrderItems.add(oi);
 
 	}
