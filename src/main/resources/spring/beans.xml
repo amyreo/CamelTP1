@@ -2,10 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       https://camel.apache.org/schema/spring/camel-spring-2.23.3.xsd">
-	<bean class="org.inti.stuff.Barista" id="_Barista" />
+	<bean class="org.inti.stuff.Barista" id="barista" />
 	<bean class="org.inti.stuff.CafeAggregationStrategy"
-		id="_CafeAggregationStrategy" />
-	<bean class="org.inti.stuff.DrinkRouter" id="_DrinkRouter" />
-	<bean class="org.inti.stuff.OrderSplitter" id="_OrderSplitter" />
-	<bean class="org.inti.stuff.Waiter" id="_Waiter" />
+		id="cafeAggregationStrategy" />
+	<bean class="org.inti.stuff.DrinkRouter" id="drinkRouter" />
+	<bean class="org.inti.stuff.OrderSplitter" id="orderSplitter" />
+	<bean class="org.inti.stuff.Waiter" id="waiter" />
 </beans>

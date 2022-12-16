@@ -6,7 +6,9 @@ import java.util.List;
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;
 import org.inti.model.Drink;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CafeAggregationStrategy implements AggregationStrategy {
 
 	@Override

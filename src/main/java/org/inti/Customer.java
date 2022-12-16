@@ -26,7 +26,7 @@ public class Customer extends RouteBuilder implements InitializingBean, CamelCon
 	@Override
 	public void configure() throws Exception {
 		// TODO Auto-generated method stub
-		from("myTimer?fixedRate=true&period=60000")
+		from("timer:myTimer?fixedRate=true&period=60000")
 		.to("direct:cafe")
 		.process(new Processor() {
 			
