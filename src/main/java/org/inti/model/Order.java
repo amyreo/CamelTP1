@@ -19,7 +19,6 @@ public class Order {
 		this.listOrderItems = listOrderItems;
 	}
 
-
 	public int getNumber() {
 		return number;
 	}
@@ -33,6 +32,7 @@ public class Order {
 	}
 
 	public void setListOrderItems(List<OrderItem> listOrderItems) {
+//		System.out.println("on est bien dans setlistorderitems");
 		this.listOrderItems = listOrderItems;
 	}
 
@@ -41,10 +41,19 @@ public class Order {
 		return "Order [number=" + number + ", listOrderItems=" + listOrderItems + "]";
 	}
 
+//	public List<OrderItem> additem(DrinkType drinkType, int shots, boolean iced) {
+//		for (OrderItem orderItem : listOrderItems) {
+//			listOrderItems.add(orderItem);
+//		}
+//		return listOrderItems;
+//	}
+
 	public void additem(DrinkType drinkType, int shots, boolean iced) {
-		for (OrderItem orderItem : listOrderItems) {
-			listOrderItems.add(orderItem);
-		}
-		
+		OrderItem oi = new OrderItem();
+		oi.setDrinkType(drinkType);
+		oi.setIced(iced);
+		oi.setShots(shots);
+		listOrderItems.add(oi);
+
 	}
 }
