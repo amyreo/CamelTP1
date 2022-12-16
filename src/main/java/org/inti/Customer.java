@@ -5,8 +5,8 @@ import org.apache.camel.CamelContextAware;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
+import org.inti.model.Order;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.core.annotation.Order;
 
 public class Customer extends RouteBuilder implements InitializingBean, CamelContextAware {
 	private CamelContext camelContext;
@@ -32,7 +32,7 @@ public class Customer extends RouteBuilder implements InitializingBean, CamelCon
 			public void process(Exchange exchange) throws Exception {
 				// TODO Auto-generated method stub
 				Order order = exchange.getIn().getBody(Order.class);
-				order.additem
+				order.additem(null, null, null);
 				exchange.getIn().setBody(order);
 				
 			}
