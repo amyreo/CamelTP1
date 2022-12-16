@@ -41,7 +41,7 @@ public class Order {
 		return "Order [number=" + number + ", listOrderItems=" + listOrderItems + "]";
 	}
 
-	public void additem(DrinkType drinkType, Drink shots, Drink iced) {
+	public void additem(DrinkType drinkType, int shots, boolean iced) {
 		for (OrderItem orderItem : listOrderItems) {
 			listOrderItems.add(orderItem);
 		}
